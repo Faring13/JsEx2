@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <style>
+        table,
+        tr,
+        th {
+            border-width: 1px
+        }
+    </style>
+    <title>Es3</title>
+</head>
+
+<body>
+
+    <input type="text" id="t1" name="prova"></input>
+    <button type="button" id="b1" name="btn">+</button>
+    <button type="button" id="b2" name="btn">-</button><br>
+    <input type="text" id="t2" name="prova2"></input>
+    <button type="button" id="b3" name="btn">x</button>
+    <button type="button" id="b4" name="btn">/</button><br>
+    <table id=res>
+        <th>1N</th>
+        <th>2N</th>
+        <th>op</th>
+        <th>res</th>
+    </table>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+
+        $("#b1").on("click", function () {
+            var t1 = $("#t1").val() * 1;
+            var t2 = $("#t2").val() * 1;
+            $("#res").append("<tr><td>" + t1 + "</td><td>" + t2 + "</td><td>+</td><td>" + (t1 + t2) + "</td></tr>");
+        });
+
+        $("#b2").on("click", function () {
+            $("#res").append("<tr><td>" + ($("#t1").val() + "</td><td>" + $("#t2").val() + "</td><td>-</td><td>" + $("#t1").val() * 1 - $("#t2").val() * 1 + "</td>"));
+        });
+
+        $("#b3").on("click", function () {
+            $("#res").append("<tr><td>" + ($("#t1").val() + "</td><td>" + $("#t2").val() + "</td><td>*</td><td>" + $("#t1").val() * $("#t2").val() + "</td>"));
+        });
+
+        $("#b4").on("click", function () {
+            $("#res").append("<tr><td>" + ($("#t1").val() + "</td><td>" + $("#t2").val() + "</td><td>/</td><td>" + $("#t1").val() / $("#t2").val() + "</td>"));
+        });
+    </script>
+</body>
+
+
+
+</html>
